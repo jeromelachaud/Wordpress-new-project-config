@@ -60,6 +60,7 @@ Tip : If you are using Alfred or an other launcher application, you can execute 
 
 ##Changelog
 
+<<<<<<< HEAD
 ###v1.4
 - Fixed h5bp .htaccess URL
 - Fixed SQL Username syntaxe
@@ -67,6 +68,12 @@ Tip : If you are using Alfred or an other launcher application, you can execute 
 - Updated underconstruction plug-in
 - Now you can fetch a Gruntfile
 - Added Bourbon lib
+=======
+###v1.3.2
+- fixe a mySQL issue
+- Remove twentythirteen and twentyfourteen theme
+- Update fetching of the new H5BP .htaccess
+>>>>>>> mysql, remove default themes and .htaccess
 
 ###v1.3.1
 - Add mysql path in the config file 
