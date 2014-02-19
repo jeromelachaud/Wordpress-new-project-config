@@ -134,21 +134,21 @@ rm -r twentyfourteen
 rm -r twentythirteen
 rm -r twentytwelve
 
-# --------------------
-# Fetch Gruntfile 
-# --------------------
-echo 'Download Grunt...'
-cd $PROJECT_NAME
-git clone $GRUNTFILE_URL
-cd $GRUNTFILE_NAME
-npm install
+# # --------------------
+# # Fetch Gruntfile 
+# # --------------------
+# echo 'Download Grunt...'
+# cd $PROJECT_NAME
+# git clone $GRUNTFILE_URL
+# cd $GRUNTFILE_NAME
+# npm install
 
-# # --------------------
-# # Fetch Bourbon 
-# # --------------------
-echo 'Install Bourbon...'
-cd ../stylesheets/lib/
-bourbon install
+# # # --------------------
+# # # Fetch Bourbon 
+# # # --------------------
+# echo 'Install Bourbon...'
+# cd ../stylesheets/lib/
+# bourbon install
 
 # --------------------
 # Remove Hello Dolly plugin and fetch plugins
