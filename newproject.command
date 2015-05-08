@@ -130,17 +130,20 @@ rm -rf wordpress && rm readme.html && rm license.txt
 # Fetch base theme & remove default themes
 # --------------------
 echo 'Remove default themes and fetch your starter theme'
-cd wp-content/themes/
+cd $PROJECT_DIR/wp-content/themes/
 git clone $THEME_URL $PROJECT_NAME
 rm -r twentythirteen
 rm -r twentyfourteen
 rm -r twentyfifteen
+cd $PROJECT_NAME
+echo 'npm install & bower install' 
+npm install && bower install
 
 # --------------------
 # Remove Hello Dolly plugin and fetch plugins
 # --------------------
 echo 'Remove Hello Dolly and fetch your plugins'
-cd ../plugins/
+cd $PROJECT_DIR/wp-content/plugins/
 rm hello.php
 
 for PLUGIN in ${PLUGINS_URL[@]}
