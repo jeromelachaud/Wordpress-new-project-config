@@ -1,6 +1,8 @@
 #!/bin/sh
 
-# Version = 1.3.1
+# Version = 1.3.2
+# 
+
 
 # --------------------
 # Load Variables
@@ -120,9 +122,9 @@ rm -rf wordpress && rm readme.html && rm license.txt
 # --------------------
 # Fetch H5BP server-config .htaccess
 # --------------------
-git clone https://github.com/h5bp/server-configs-apache.git
-cp server-configs-apache/.htaccess .htaccess
-rm -rf server-configs-apache
+#git clone https://github.com/h5bp/server-configs-apache.git
+#cp server-configs-apache/.htaccess .htaccess
+#rm -rf server-configs
 
 # --------------------
 # Fetch base theme & remove default themes
@@ -130,31 +132,15 @@ rm -rf server-configs-apache
 echo 'Remove default themes and fetch your starter theme'
 cd wp-content/themes/
 git clone $THEME_URL $PROJECT_NAME
-rm -r twentyfourteen
 rm -r twentythirteen
-rm -r twentytwelve
-
-# # --------------------
-# # Fetch Gruntfile 
-# # --------------------
-# echo 'Download Grunt...'
-# cd $PROJECT_NAME
-# git clone $GRUNTFILE_URL
-# cd $GRUNTFILE_NAME
-# npm install
-
-# # # --------------------
-# # # Fetch Bourbon 
-# # # --------------------
-# echo 'Install Bourbon...'
-# cd ../stylesheets/lib/
-# bourbon install
+rm -r twentyfourteen
+rm -r twentyfifteen
 
 # --------------------
 # Remove Hello Dolly plugin and fetch plugins
 # --------------------
 echo 'Remove Hello Dolly and fetch your plugins'
-cd $PROJECT_DIR/wp-content/plugins
+cd ../plugins/
 rm hello.php
 
 for PLUGIN in ${PLUGINS_URL[@]}
@@ -212,7 +198,7 @@ rm salt.txt
 # --------------------
 # Create Sublime Project config file
 # --------------------
-echo 'Create Sublime text 2 project file...'
+echo 'Create Sublime text project file...'
 SUBLIME_PROJECT_FILE=$PROJECT_NAME".sublime-project"
 touch $SUBLIME_PROJECT_FILE
 echo '{
@@ -314,8 +300,8 @@ cd $PROJECT_DIR
 # --------------------
 # Create a new project in CodeKit
 # --------------------
-#echo 'Create codekit project'
-#open -a /Applications/CodeKit.app $PROJECT_DIR"/wp-content/themes/"$PROJECT_NAME
+# echo 'Create codekit project'
+# open -a /Applications/CodeKit.app $PROJECT_DIR"/wp-content/themes/"$PROJECT_NAME
 
 # --------------------
 # git init
@@ -324,8 +310,6 @@ echo 'git init'
 git init
 echo ".DS_Store
 wp-config-local.php
-Gruntfile_wp/
-stylesheets/lib/bourbon/
 .sass-cache" > .gitignore
 
 # --------------------
